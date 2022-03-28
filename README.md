@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Git](https://github.com/ManjeetJass/advice-generator-app.git)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Live Site URL: [Git Pages](https://manjeetjass.github.io/advice-generator-app/)
 
 ## My process
 
