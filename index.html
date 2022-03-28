@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Advice generator app</title>
+
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <section>
+            <div class="card" id="card">
+                <p>Advice #<span id="adviceId"></span></p>
+                <div>
+                    <h1 class="">"<span id="adviceText"></span>"</h1>
+                </div>
+                <picture>
+                    <source
+                        media="(max-width: 550px)"
+                        srcset="./images/pattern-divider-mobile.svg"
+                    />
+                    <source
+                        media="(min-width: 800px)"
+                        srcset="./images/pattern-divider-desktop.svg"
+                    />
+                    <img src="./images/pattern-divider-desktop.svg" />
+                </picture>
+
+                <div class="btn">
+                    <button class="circle" id="btnAdvice">
+                        <img src="./images/icon-dice.svg" />
+                    </button>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <script>
+        // Add event listener on button
+        const elementButton = document.getElementById('btnAdvice')
+        elementButton.addEventListener('click', getAdvice)
+
+        // Get advise
+        function getAdvice() {
+            fetch('https://api.adviceslip.com/advice')
+                .then((response) => {
+                    // indicates whether the response is successful (status code 200-299) or not
+                    if (!response.ok) {
+                        throw new Error(
+                            `Request failed with status ${reponse.status}`
+                        )
+                    }
+                    return response.json()
+                })
+                .then((data) => {
+                    document.getElementById('adviceId').innerHTML = data.slip.id
+                    document.getElementById('adviceText').innerHTML =
+                        data.slip.advice
+                })
+                .catch((error) => console.log(error))
+        }
+
+        var advice = getAdvice()
+    </script>
+</html>

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+.margin-auto {
+  margin: auto;
+}
+
+.margin-zero {
+  margin: 0;
+}
+
+body {
+  background-color: #1f2632;
+  color: #cee3e9;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+section {
+  display: grid;
+  place-items: center;
+}
+
+p {
+  line-height: 25px;
+  letter-spacing: 0.3rem;
+  color: #52ffa8;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.card {
+  background: #323a49;
+  border-radius: 30px;
+  padding: 30px;
+  min-height: 330px;
+  max-width: 540px;
+  width: -webkit-fill-available;
+  display: grid;
+  position: relative;
+}
+.card .btn {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 100%;
+  width: 100%;
+}
+
+.circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #52ffa8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.circle:active {
+  animation: spin 300ms linear;
+}
+.circle:hover {
+  transform: scale(0.95);
+  box-shadow: rgba(82, 254, 168, 0.9) 0px 0px 10px 1px, rgba(78, 253, 166, 0.6) 0px 0px 10px 1px, rgba(79, 252, 166, 0.4) 0px 0px 10px 1px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1000deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
